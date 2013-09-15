@@ -1,9 +1,9 @@
 module Exporter
-  module Processor
+  class Exporter
     def export(data, options)
       document = process(data, options)
       raise TypeError.new('process method must return an Document object') unless document.kind_of? Document
-      if document
+      document
     end
 
     protected
