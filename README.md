@@ -1,6 +1,6 @@
 # Exporter
-
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/voanhduy1512/exporter.png?branch=master)](https://travis-ci.org/voanhduy1512/exporter)
+[![Code Climate](https://codeclimate.com/github/voanhduy1512/exporter.png)](https://codeclimate.com/github/voanhduy1512/exporter)
 
 ## Installation
 
