@@ -1,4 +1,7 @@
 require "exporter/version"
+require "exporter/configuration"
+require "exporter/document"
+require "exporter/exporter"
 
 module Exporter
   def self.configuration
