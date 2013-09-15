@@ -6,7 +6,7 @@ require 'exporter/version'
 Gem::Specification.new do |spec|
   spec.name          = "exporter"
   spec.version       = Exporter::VERSION
-  spec.authors       = ["Vo\xCC\x83 Anh Duy"]
+  spec.authors       = ["Võ Anh Duy"]
   spec.email         = ["voanhduy1512@live.com"]
   spec.description   = %q{A simple gem for export data to other format}
   spec.summary       = %q{A simple data exporter}
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
 end
