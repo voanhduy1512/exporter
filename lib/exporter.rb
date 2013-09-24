@@ -20,4 +20,4 @@ module Exporter
   end
 end
 
-Exporter.configuration.register(Array, :csv, CsvExporter)
+Exporter.configuration.register(Array, :csv, Exporter::CsvExporter)
