@@ -2,6 +2,8 @@ require "exporter/version"
 require "exporter/configuration"
 require "exporter/document"
 require "exporter/exporter"
+require "exporter/documents/csv_document"
+require "exporter/exporters/csv_exporter"
 
 module Exporter
   def self.configuration
@@ -17,3 +19,5 @@ module Exporter
     end
   end
 end
+
+Exporter.configuration.register(Array, :csv, CsvExporter)
