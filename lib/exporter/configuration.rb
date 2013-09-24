@@ -9,7 +9,7 @@ module Exporter
     end
 
     def can_export?(data_type, export_type)
-      (@exporters[data_type] && @exporters[data_type][export_type]) ? true : false
+      @exporters[data_type] && @exporters[data_type][export_type]
     end
 
     def exporter(data_type, export_type)

@@ -5,9 +5,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-if ENV["COVERAGE"]
+if ENV['TRAVIS']
   require 'coveralls'
-  Coveralls.wear!
+  Coveralls.wear!   
 end
 
 require "exporter"
