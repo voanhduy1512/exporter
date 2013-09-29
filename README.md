@@ -18,10 +18,13 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install exporter
-
 ## Usage
+``` ruby
+# Here is the data which you want to export
+users = User.all
 
-TODO: Write usage instructions here
+# export it
+Exporter.export(users, :csv).to_file(path_to_file)
+```
+
+Only support export to csv now (more types are coming)

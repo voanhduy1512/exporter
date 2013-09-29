@@ -1,4 +1,3 @@
-require 'CSV'
 module Exporter
   class CsvExporter < Exporter
     def self.process(data, options)
