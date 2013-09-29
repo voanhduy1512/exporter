@@ -1,18 +1,18 @@
 require "spec_helper"
-require "models/user"
 
 describe Exporter do
-  # let(:data){
-  #   [
-  #     User.new(1,'a'),
-  #     User.new(2,'b'),
-  #     User.new(3,'c')
-  #   ]
-  # }
-  # describe '.export' do
-  #   it 'return an Exporter::Document' do
-  #     document = Exporter.export(data, :csv)
-  #     expect(document).to kind_of? (Exporter::Document)
-  #   end
-  # end
+  let(:data){
+    [
+      Exporter::User.create(:name => 'aaa', :email => 'aaa@aaa.aaa'),
+      Exporter::User.create(:name => 'bbb', :email => 'bbb@bbb.bbb')
+    ]
+  }
+  describe '.export' do
+    it 'return an Exporter::Document' do
+      document = Exporter.export(data, :csv)
+      puts document.kind_of? Exporter::Document
+      puts document.class
+      expect(document).to be_kind_of(Exporter::Document)
+    end
+  end
 end

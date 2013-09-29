@@ -7,10 +7,13 @@
 
 if ENV['TRAVIS']
   require 'coveralls'
-  Coveralls.wear!   
+  Coveralls.wear!
 end
 
 require "exporter"
+require 'active_record'
+require 'models/user'
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
@@ -23,4 +26,17 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+end
+
+ActiveRecord::Base.establish_connection(
+    :adapter => 'sqlite3',
+    :database => ':memory:'
+)
+ActiveRecord::Schema.define do
+  self.verbose = false
+
+  create_table :users, :force => true do |t|
+    t.string :name
+    t.string :email
+  end
 end
