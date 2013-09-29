@@ -5,7 +5,7 @@ module Exporter
     def initialize(data)
       @data = data
     end
-    
+
     def to_file(path)
       File.open(path, 'w') {|f| f.write(@data) }
     end
