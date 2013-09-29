@@ -1,8 +1,17 @@
+require 'CSV'
 module Exporter
   class CsvExporter < Exporter
-    def process(data, options)
+    def self.process(data, options)
+
       raise TypeError.new('data must be an array') unless data.class.eql? Array
-      columns = options[:columns] || data[0].class.attribute_names
+      raise TypeError.new('Data must be an ActiveRecord') unless data[0].kind_of? ActiveRecord::Base
+
+      if options[:columns]
+        columns = options[:columns]
+      else
+        columns = data[0].class.attribute_names
+      end
+
       CSV.generate do |csv|
         csv << columns
         data.each do |d|

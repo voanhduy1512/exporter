@@ -10,7 +10,7 @@ module Exporter
     @configuration ||= Configuration.new
   end
 
-  def self.export(data, export_type, options)
+  def self.export(data, export_type, options={})
     exporter = @configuration.exporter(data.class, export_type)
     if exporter
       exporter.export(data, options)
