@@ -1,3 +1,4 @@
+require "csv"
 require "exporter/version"
 require "exporter/configuration"
 require "exporter/document"
