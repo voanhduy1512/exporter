@@ -12,12 +12,14 @@ module Exporter
         columns = data[0].class.attribute_names
       end
 
-      CSV.generate do |csv|
+      data = CSV.generate do |csv|
         csv << columns
         data.each do |d|
           csv << d.attributes.values_at(*columns)
         end
       end
+
+      CsvDocument.new(data)
     end
   end
 end
