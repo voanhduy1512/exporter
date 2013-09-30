@@ -34,7 +34,8 @@
         <h1>
 <a name="exporter" class="anchor" href="#exporter"><span class="octicon octicon-link"></span></a>Exporter</h1>
 
-<p><a href="https://travis-ci.org/voanhduy1512/exporter"><img src="https://travis-ci.org/voanhduy1512/exporter.png?branch=master" alt="Build Status"></a>
+<p><a href="http://badge.fury.io/rb/exporter"><img src="https://badge.fury.io/rb/exporter.png" alt="Gem Version"></a>
+<a href="https://travis-ci.org/voanhduy1512/exporter"><img src="https://travis-ci.org/voanhduy1512/exporter.png?branch=master" alt="Build Status"></a>
 <a href="https://codeclimate.com/github/voanhduy1512/exporter"><img src="https://codeclimate.com/github/voanhduy1512/exporter.png" alt="Code Climate"></a>
 <a href="https://coveralls.io/r/voanhduy1512/exporter"><img src="https://coveralls.io/repos/voanhduy1512/exporter/badge.png" alt="Coverage Status"></a>
 <a href="https://gemnasium.com/voanhduy1512/exporter"><img src="https://gemnasium.com/voanhduy1512/exporter.png" alt="Dependency Status"></a></p>
@@ -52,26 +53,17 @@
 <pre><code>$ bundle
 </code></pre>
 
-<p>Or install it yourself as:</p>
-
-<pre><code>$ gem install exporter
-</code></pre>
-
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>TODO: Write usage instructions here</p>
+<div class="highlight highlight-ruby"><pre><span class="c1"># Here is the data which you want to export</span>
+<span class="n">users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">all</span>
 
-<h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<span class="c1"># export it</span>
+<span class="no">Exporter</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="ss">:csv</span><span class="p">)</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">)</span>
+</pre></div>
 
-<ol>
-<li>Fork it</li>
-<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
-<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
-<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
-<li>Create new Pull Request</li>
-</ol>
+<p>Only support export to csv now (more types are coming)</p>
       </section>
     </div>
 
@@ -83,7 +75,17 @@
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-44450150-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
