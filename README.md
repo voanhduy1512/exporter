@@ -28,3 +28,7 @@ Exporter.export(users, :csv).to_file(path_to_file)
 ```
 
 Only support export to csv now (more types are coming)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voanhduy1512/exporter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
