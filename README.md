@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/voanhduy1512/exporter.png)](https://codeclimate.com/github/voanhduy1512/exporter)
 [![Coverage Status](https://coveralls.io/repos/voanhduy1512/exporter/badge.png)](https://coveralls.io/r/voanhduy1512/exporter)
 [![Dependency Status](https://gemnasium.com/voanhduy1512/exporter.png)](https://gemnasium.com/voanhduy1512/exporter)
-
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voanhduy1512/exporter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
 
@@ -30,5 +30,5 @@ Exporter.export(users, :csv).to_file(path_to_file)
 Only support export to csv now (more types are coming)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voanhduy1512/exporter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
