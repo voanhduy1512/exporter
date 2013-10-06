@@ -1,9 +1,9 @@
 module Exporter
   class CsvExporter < Exporter
-    def self.process(data, options)
 
-      raise TypeError.new('data must be an array') unless data.class.eql? Array
-      raise TypeError.new('Data must be an ActiveRecord') unless data[0].kind_of? ActiveRecord::Base
+    def process(data, options)
+
+      validate data
 
       if options[:columns]
         columns = options[:columns]
@@ -19,6 +19,17 @@ module Exporter
       end
 
       CsvDocument.new(data)
+    end
+
+    private
+    def validate(data)
+      if data.kind_of?(Array) && data[0].kind_of?(ActiveRecord::Base)
+        return
+      end
+      if data.kind_of? ActiveRecord::Relation
+        return
+      end
+      raise TypeError.new
     end
   end
 end
