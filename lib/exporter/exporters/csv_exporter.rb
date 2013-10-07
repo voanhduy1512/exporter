@@ -3,7 +3,7 @@ module Exporter
 
     def process(data, options)
 
-      validate data
+      validate data, options
 
       if options[:columns]
         columns = options[:columns]
@@ -22,14 +22,14 @@ module Exporter
     end
 
     private
-    def validate(data)
-      if data.kind_of?(Array) && data[0].kind_of?(ActiveRecord::Base)
-        return
-      end
+    def validate(data, options)
       if data.kind_of? ActiveRecord::Relation
         return
+      elsif data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
+        return
+      else
+        raise TypeError.new
       end
-      raise TypeError.new
     end
   end
 end

@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/voanhduy1512/exporter/badge.png)](https://coveralls.io/r/voanhduy1512/exporter)
 [![Dependency Status](https://gemnasium.com/voanhduy1512/exporter.png)](https://gemnasium.com/voanhduy1512/exporter)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voanhduy1512/exporter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+[![Codeship Badge](https://www.codeship.io/projects/e0b43a20-112f-0131-41e4-7e338af339fa/status)](https://www.codeship.io/projects/7774)
 
 
 ## Installation
