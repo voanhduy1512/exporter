@@ -5,7 +5,11 @@ module Exporter
     end
 
     def register(data_type, export_type, exporter)
-      @exporters[data_type] = {export_type => exporter}
+      if @exporters[data_type].nil?
+        @exporters[data_type] = {export_type => exporter}
+      else
+        @exporters[data_type][export_type] = exporter
+      end
     end
 
     def can_export?(data_type, export_type)
