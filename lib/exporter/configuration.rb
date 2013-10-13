@@ -1,5 +1,6 @@
 module Exporter
   class Configuration
+
     def initialize
       @exporters = Hash.new
     end
@@ -12,22 +13,22 @@ module Exporter
       end
     end
 
-    def can_export?(data, export_type)
+    def index(data, default_value, method)
       @exporters.keys.each do |key|
-        if data.kind_of? key
-          return true
-        end
+        return method.call(key) if data.kind_of?(key)
       end
-      return false
+      default_value
+    end
+
+    def can_export?(data, export_type)
+      can_export_proc = Proc.new{|key| @exporters[key][export_type].present?}
+      index(data, false, can_export_proc)
     end
 
     def exporter(data, export_type)
-      @exporters.keys.each do |key|
-        if data.kind_of? key
-          return @exporters[key][export_type]
-        end
-      end
-      return nil
+      exporter_proc = Proc.new {|key| @exporters[key][export_type]}
+      index(data, nil, exporter_proc)
     end
+
   end
 end
