@@ -23,13 +23,9 @@ module Exporter
 
     private
     def validate(data, options)
-      if data.kind_of? ActiveRecord::Relation
-        return
-      elsif data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
-        return
-      else
-        raise TypeError.new
-      end
+      return if data.kind_of? ActiveRecord::Relation 
+      return if data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
+      raise TypeError.new 
     end
   end
 end

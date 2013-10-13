@@ -14,24 +14,20 @@ module Exporter
       end
 
       book = Spreadsheet::Workbook.new
-      sheet1 = book.create_worksheet
-      sheet1.name = options[:sheet_name] || 'sheet1'
-      sheet1.row(0).concat columns
+      sheet = book.create_worksheet
+      sheet.name = options[:sheet_name] || 'sheet1'
+      sheet.row(0).concat columns
       data.each_with_index do |row, index|
-        sheet1.row(index+1).concat row.attributes.values_at(*columns)
+        sheet.row(index+1).concat row.attributes.values_at(*columns)
       end
       ExcelDocument.new(book)
     end
 
     private
     def validate(data, options)
-      if data.kind_of? ActiveRecord::Relation
-        return
-      elsif data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
-        return
-      else
-        raise TypeError.new
-      end
+      return if data.kind_of? ActiveRecord::Relation 
+      return if data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
+      raise TypeError.new 
     end
   end
 end
