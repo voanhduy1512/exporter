@@ -15,7 +15,7 @@ module Exporter
   end
 
   def self.export(data, export_type, options={})
-    exporter = @configuration.exporter(data.class, export_type)
+    exporter = @configuration.exporter(data, export_type)
     if exporter
       exporter.export(data, options)
     else

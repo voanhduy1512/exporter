@@ -1,12 +1,10 @@
 require "spec_helper"
 
 describe Exporter do
-  let(:data){
-    [
-      Exporter::User.create(:name => 'aaa', :email => 'aaa@aaa.aaa'),
-      Exporter::User.create(:name => 'bbb', :email => 'bbb@bbb.bbb')
-    ]
-  }
+  before(:all) do
+    FactoryGirl.create(:user)
+  end
+  let(:data){ User.all }
   describe '.export' do
     context ':csv' do
       it 'return an Exporter::Document' do

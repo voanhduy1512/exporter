@@ -12,12 +12,22 @@ module Exporter
       end
     end
 
-    def can_export?(data_type, export_type)
-      @exporters[data_type] && @exporters[data_type][export_type]
+    def can_export?(data, export_type)
+      @exporters.keys.each do |key|
+        if data.kind_of? key
+          return true
+        end
+      end
+      return false
     end
 
-    def exporter(data_type, export_type)
-      can_export?(data_type, export_type) ? @exporters[data_type][export_type] : nil
+    def exporter(data, export_type)
+      @exporters.keys.each do |key|
+        if data.kind_of? key
+          return @exporters[key][export_type]
+        end
+      end
+      return nil
     end
   end
 end

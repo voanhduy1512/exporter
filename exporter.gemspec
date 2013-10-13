@@ -22,7 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'factory_girl'
 
-  spec.add_runtime_dependency 'activerecord'
-  spec.add_runtime_dependency 'spreadsheet'
+  spec.add_dependency 'activerecord'
+  spec.add_dependency 'spreadsheet'
 end
