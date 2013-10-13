@@ -7,7 +7,7 @@ module Exporter
     end
 
     def to_file(path)
-      File.open(path, 'w') {|f| f.write(@data) }
+      raise 'must override this method in subclass'
     end
   end
 end
