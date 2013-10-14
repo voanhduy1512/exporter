@@ -5,7 +5,7 @@ module Exporter
 
     def process(data, options)
 
-      validate data, options
+      raise TypeError.new unless is_active_record?(data, options)
 
       columns = options[:columns] || data[0].class.attribute_names
 
@@ -16,14 +16,9 @@ module Exporter
       data.each_with_index do |row, index|
         sheet.row(index+1).concat row.attributes.values_at(*columns)
       end
+
       ExcelDocument.new(book)
     end
 
-    private
-    def validate(data, options)
-      return if data.kind_of? ActiveRecord::Relation
-      return if data.kind_of?(Array) && (data[0].kind_of?(ActiveRecord::Base) || options[:columns])
-      raise TypeError.new
-    end
   end
 end

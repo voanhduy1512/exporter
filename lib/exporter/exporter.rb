@@ -14,5 +14,9 @@ module Exporter
     def process(data, options)
       raise NotImplementedError.new("You must implement this process method.")
     end
+
+    def is_active_record?(data, options)
+      (data.kind_of? ActiveRecord::Relation) || (data.kind_of?(Array) && data[0].kind_of?(ActiveRecord::Base))
+    end
   end
 end

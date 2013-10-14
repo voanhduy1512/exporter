@@ -16,7 +16,7 @@ describe Exporter do
         expect(Exporter.configuration.can_export?(data, :excel)).to eql(true)
       end
 
-      it 'can\'t export not register type' do
+      it "can't export not register type" do
         expect(Exporter.configuration.can_export?(data, :some_weird_type)).to eql(false)
       end
 
@@ -49,6 +49,20 @@ describe Exporter do
           expect(content.worksheet(0).row(1)).to eql(document.data.worksheet(0).row(1))
           File.delete('dummy.xls')
         end
+      end
+    end
+
+    context 'Array of ActiveRecord::Base' do
+      it 'can export to csv' do
+        expect(Exporter.configuration.can_export?(data, :csv)).to eql(true)
+      end
+
+      it 'can export to excel' do
+        expect(Exporter.configuration.can_export?(data, :excel)).to eql(true)
+      end
+
+      it "can't export not register type" do
+        expect(Exporter.configuration.can_export?(data, :some_weird_type)).to eql(false)
       end
     end
   end
