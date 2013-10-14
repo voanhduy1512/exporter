@@ -38,7 +38,10 @@
 <a href="https://travis-ci.org/voanhduy1512/exporter"><img src="https://travis-ci.org/voanhduy1512/exporter.png?branch=master" alt="Build Status"></a>
 <a href="https://codeclimate.com/github/voanhduy1512/exporter"><img src="https://codeclimate.com/github/voanhduy1512/exporter.png" alt="Code Climate"></a>
 <a href="https://coveralls.io/r/voanhduy1512/exporter"><img src="https://coveralls.io/repos/voanhduy1512/exporter/badge.png" alt="Coverage Status"></a>
-<a href="https://gemnasium.com/voanhduy1512/exporter"><img src="https://gemnasium.com/voanhduy1512/exporter.png" alt="Dependency Status"></a></p>
+<a href="https://gemnasium.com/voanhduy1512/exporter"><img src="https://gemnasium.com/voanhduy1512/exporter.png" alt="Dependency Status"></a>
+<a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/voanhduy1512/exporter/trend.png" alt="Bitdeli Badge"></a></p>
+
+<p>Help you to export your data to csv or excel in a dead simple way</p>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
@@ -60,10 +63,9 @@
 <span class="n">users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">all</span>
 
 <span class="c1"># export it</span>
-<span class="no">Exporter</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="ss">:csv</span><span class="p">)</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">)</span>
+<span class="no">Exporter</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="ss">:csv</span><span class="p">)</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">'user.csv'</span><span class="p">)</span>
+<span class="no">Exporter</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="ss">:excel</span><span class="p">)</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">'user.xls'</span><span class="p">)</span>
 </pre></div>
-
-<p>Only support export to csv now (more types are coming)</p>
       </section>
     </div>
 
