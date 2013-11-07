@@ -9,5 +9,9 @@ module Exporter
     def to_file(path)
       raise 'must override this method in subclass'
     end
+
+    def to_stream(path)
+      raise 'must override this method in subclass'
+    end
   end
 end
